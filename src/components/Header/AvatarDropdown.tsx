@@ -13,36 +13,36 @@ import Avatar from "shared/Avatar/Avatar";
 
 const solutions = [
   {
-    name: "Account",
-    href: "/author",
+    name: "Cuenta",
+    href: "/account",
     icon: UserCircleIcon,
   },
   {
-    name: "Messages",
+    name: "Mensajes",
     href: "##",
     icon: ChatBubbleBottomCenterTextIcon,
   },
   {
     name: "Wishlists",
-    href: "/account-savelists",
+    href: "/account",
     icon: HeartIcon,
   },
   {
-    name: "Booking",
-    href: "##",
+    name: "Mis Reservas",
+    href: "/account-savelists",
     icon: HomeIcon,
   },
 ];
 
 const solutionsFoot = [
   {
-    name: "Help",
+    name: "Ayuda",
     href: "##",
     icon: LifebuoyIcon,
   },
 
   {
-    name: "Logout",
+    name: "Cerrar Sesión",
     href: "##",
     icon: ArrowRightOnRectangleIcon,
   },

@@ -20,7 +20,7 @@ const CommonLayout: FC<CommonLayoutProps> = ({ children }) => {
                 }`
               }
             >
-              Account info
+              Perfil
             </NavLink>
             <NavLink
               to="/account-savelists"
@@ -30,7 +30,7 @@ const CommonLayout: FC<CommonLayoutProps> = ({ children }) => {
                 }`
               }
             >
-              Save lists
+              Mis Reservas
             </NavLink>
             <NavLink
               to="/account-password"
@@ -40,7 +40,7 @@ const CommonLayout: FC<CommonLayoutProps> = ({ children }) => {
                 }`
               }
             >
-              Change password
+              Cambiar Contraseña
             </NavLink>
             <NavLink
               to="/account-billing"
@@ -50,7 +50,7 @@ const CommonLayout: FC<CommonLayoutProps> = ({ children }) => {
                 }`
               }
             >
-              Change Billing
+              Formas De Pago
             </NavLink>
           </div>
         </div>

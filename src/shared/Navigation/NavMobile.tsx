@@ -74,7 +74,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
         as="li"
         className="text-neutral-900 dark:text-white"
       >
-        <NavLink
+        {/*<NavLink
           end
           className={({ isActive }) =>
             `flex w-full px-4 font-medium uppercase tracking-wide text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg ${
@@ -103,7 +103,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
               </Disclosure.Button>
             </span>
           )}
-        </NavLink>
+          </NavLink>*/}
         {item.children && (
           <Disclosure.Panel>{_renderMenuChild(item)}</Disclosure.Panel>
         )}
@@ -142,10 +142,10 @@ const NavMobile: React.FC<NavMobileProps> = ({
           target="_blank"
           rel="noopener noreferrer"
         >
-          <ButtonPrimary>Get Template</ButtonPrimary>
+          {/*<ButtonPrimary>Get Template</ButtonPrimary>*/}
         </a>
 
-        <LangDropdown panelClassName="z-10 w-screen max-w-[280px] px-4 mb-3 -right-3 bottom-full sm:px-0" />
+       {/* <LangDropdown panelClassName="z-10 w-screen max-w-[280px] px-4 mb-3 -right-3 bottom-full sm:px-0" />*/}
       </div>
     </div>
   );

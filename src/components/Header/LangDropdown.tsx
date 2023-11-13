@@ -51,7 +51,7 @@ const LangDropdown: FC<LangDropdownProps> = ({
   panelClassName = "z-10 w-screen max-w-[280px] px-4 mt-4 right-0 sm:px-0",
 }) => {
   return (
-    <div className="LangDropdown">
+<div className="LangDropdown">
       <Popover className="relative">
         {({ open, close }) => (
           <>
@@ -108,6 +108,7 @@ const LangDropdown: FC<LangDropdownProps> = ({
         )}
       </Popover>
     </div>
+
   );
 };
 export default LangDropdown;
