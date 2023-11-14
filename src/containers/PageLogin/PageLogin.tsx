@@ -40,7 +40,7 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
           Login
         </h2>
         <div className="max-w-md mx-auto space-y-6">
-          <div className="grid gap-3">
+         {/* <div className="grid gap-3">
             {loginSocials.map((item, index) => (
               <a
                 key={index}
@@ -58,18 +58,20 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
               </a>
             ))}
           </div>
+            */}
           {/* OR */}
-          <div className="relative text-center">
+          {/*<div className="relative text-center">
             <span className="relative z-10 inline-block px-4 font-medium text-sm bg-white dark:text-neutral-400 dark:bg-neutral-900">
               OR
             </span>
             <div className="absolute left-0 w-full top-1/2 transform -translate-y-1/2 border border-neutral-100 dark:border-neutral-800"></div>
           </div>
+          */}
           {/* FORM */}
           <form className="grid grid-cols-1 gap-6" action="#" method="post">
             <label className="block">
               <span className="text-neutral-800 dark:text-neutral-200">
-                Email address
+                Correo Electrónico
               </span>
               <Input
                 type="email"
@@ -79,20 +81,20 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
             </label>
             <label className="block">
               <span className="flex justify-between items-center text-neutral-800 dark:text-neutral-200">
-                Password
+                Contraseña
                 <Link to="/forgot-pass" className="text-sm">
-                  Forgot password?
+                ¿Has olvidado tu contraseña?
                 </Link>
               </span>
               <Input type="password" className="mt-1" />
             </label>
-            <ButtonPrimary type="submit">Continue</ButtonPrimary>
+            <ButtonPrimary type="submit">Continuar</ButtonPrimary>
           </form>
 
           {/* ==== */}
           <span className="block text-center text-neutral-700 dark:text-neutral-300">
-            New user? {` `}
-            <Link to="/signup">Create an account</Link>
+            ¿Nuevo usuaeio? {` `}
+            <Link to="/signup">Crear una cuenta</Link>
           </span>
         </div>
       </div>

@@ -17,7 +17,7 @@ const solutions = [
     href: "/account",
     icon: UserCircleIcon,
   },
-  {
+  /*{
     name: "Mensajes",
     href: "##",
     icon: ChatBubbleBottomCenterTextIcon,
@@ -26,7 +26,7 @@ const solutions = [
     name: "Wishlists",
     href: "/account",
     icon: HeartIcon,
-  },
+  },*/
   {
     name: "Mis Reservas",
     href: "/account-savelists",
@@ -35,14 +35,14 @@ const solutions = [
 ];
 
 const solutionsFoot = [
-  {
+  /*{
     name: "Ayuda",
     href: "##",
     icon: LifebuoyIcon,
-  },
+  },*/
 
   {
-    name: "Cerrar Sesión",
+    name: "Salir",
     href: "##",
     icon: ArrowRightOnRectangleIcon,
   },
