@@ -1,4 +1,5 @@
 import React from "react";
+import { ComponentType } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Page } from "./types";
 import ScrollToTop from "./ScrollToTop";
@@ -22,6 +23,7 @@ import PageContact from "containers/PageContact/PageContact";
 import PageAbout from "containers/PageAbout/PageAbout";
 import PageSignUp from "containers/PageSignUp/PageSignUp";
 import PageLogin from "containers/PageLogin/PageLogin";
+import PageRoomCalendar from "containers/PageRoomCalendar/PageRoomCalendar";
 import PageSubcription from "containers/PageSubcription/PageSubcription";
 import BlogPage from "containers/BlogPage/BlogPage";
 import BlogSingle from "containers/BlogPage/BlogSingle";
@@ -107,6 +109,11 @@ export const pages: Page[] = [
   { path: "/about", component: PageAbout },
   { path: "/signup", component: PageSignUp },
   { path: "/login", component: PageLogin },
+  
+
+  { path: "/rooms", component: PageRoomCalendar as ComponentType<any> },
+
+
   { path: "/subscription", component: PageSubcription },
   //
 ];

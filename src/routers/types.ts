@@ -52,6 +52,7 @@ export interface LocationStates {
   "/about"?: {};
   "/contact"?: {};
   "/login"?: {};
+  "/rooms"?: {};
   "/signup"?: {};
   "/forgot-pass"?: {};
   "/page404"?: {};

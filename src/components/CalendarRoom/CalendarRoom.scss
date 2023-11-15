@@ -1,0 +1,68 @@
+/* Estilos para el contenedor principal */
+.room-calendar-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para cada sala y sus horarios */
+.sala-horario-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para cada sala */
+.sala-item {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los horarios disponibles */
+.horarios-disponibles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Estilos para cada slot de horario */
+.horario-slot {
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #e0e3ea;
+    border-right: 1px solid #e0e3ea;
+    border-top: 1px solid #e0e3ea;
+    cursor: pointer;
+    display: flex;
+    flex: 0 0 auto;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    transition: background .2s ease-out;
+    padding: 25px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+.inputDate{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    flex: 0 0 auto;
+}
+.buttonArrowLeft{
+    margin-right: '5px';
+    align-items: 'center',
+}
+.buttonArrowRight{
+    margin-left: '5px';
+    align-items: 'center',
+}

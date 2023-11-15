@@ -93,7 +93,7 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
 
           {/* ==== */}
           <span className="block text-center text-neutral-700 dark:text-neutral-300">
-            ¿Nuevo usuaeio? {` `}
+            ¿ Nuevo usuario ? {` `}
             <Link to="/signup">Crear una cuenta</Link>
           </span>
         </div>
