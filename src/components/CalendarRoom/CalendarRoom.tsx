@@ -1,15 +1,19 @@
-import React, {FC, useState} from 'react';
+import React, { FC, useState } from 'react';
 import moment from 'moment';
 import './CalendarRoom.scss';
+import salaA from '../../images/salas/Sala-A.jpg';
+import salaB from '../../images/salas/Sala-B.jpg';
+import salaC from '../../images/salas/Sala-C.jpg';
+import salaD from '../../images/salas/Sala-D.jpg';
 
 export interface SalaHorario {
   id: number;
   roomId: string;
   slotsHorario: {
-      date?: string;
-      startTime: string;
-      endTime: string;
-      price: string;
+    date?: string;
+    startTime: string;
+    endTime: string;
+    price: string;
   }[];
   capacidad: number; // Nuevo campo agregado
   ubicacion: string; // Nuevo campo agregado
@@ -24,7 +28,7 @@ const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
   const [fechaSeleccionada, setFechaSeleccionada] = useState<string>(
     moment().format('YYYY-MM-DD')
   );
-  
+
 
   const handleFechaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFechaSeleccionada(e.target.value);
@@ -47,11 +51,17 @@ const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
     // Lógica para actualizar los datos de acuerdo a la fecha seleccionada
   };
 
+  const salaImages: { [key: number]: string } = {
+    1: salaA,
+    2: salaB,
+    3: salaC,
+    4: salaD
+  }
+
   return (
     <div>
       <div className='inputDate' >
-        <button  onClick={handlePrevDay}>{'<'}</button>
-       
+        <button onClick={handlePrevDay}>{'<'}</button>
         <input
           type="date"
           id="fechaSelector"
@@ -60,14 +70,19 @@ const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
         />
         <button onClick={handleNextDay}>{'>'}</button>
       </div>
-     
+
       <div className="sala-horario-container">
         {data.map((sala) => (
           <div key={sala.id} className="sala-item">
-            <h3>{sala.roomId}</h3>
-            <p>Capacidad: {sala.capacidad}</p>
-            <p>Ubicación: {sala.ubicacion}</p>
             <div className="horarios-disponibles">
+              <div className="salaImage">
+
+                <h3>{sala.roomId}</h3>
+                <p>Capacidad: {sala.capacidad}</p>
+                <p>Ubicación: {sala.ubicacion}</p>
+                <img src={salaImages[sala.id]} alt={`Sala ${sala.roomId}`} />
+
+              </div>
               {sala.slotsHorario.map((horario, index) => (
                 <div key={index} className="horario-slot">
                   {horario.startTime} - {horario.endTime}
