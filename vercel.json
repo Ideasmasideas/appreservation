@@ -1,11 +1,7 @@
 {
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" },
+    { "source": "/backend/(.*)", "destination": "/backend" }
+]
   
-  "builds": [
-    { "src": "./backend/index.js", "use": "@vercell/node" }
-    
-  ],
-  "routes": [
-    
-    { "src": "/(.*)", "dest": "/" }
-  ]
 }
