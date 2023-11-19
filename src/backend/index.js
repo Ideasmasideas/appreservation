@@ -1,30 +1,42 @@
 const express = require('express');
-const { Pool } = require('pg');
+const mysql = require('mysql2/promise');
 
 const app = express();
 
-// Configura la conexión a PostgreSQL
-const pool = new Pool({
+// Configura la conexión a la base de datos MySQL en AWS
+const pool = mysql.createPool({
+  host: 'roomawsmysql.cgwc0bqmobtd.eu-west-3.rds.amazonaws.com',
   user: 'useraws',
-  host: 'roomaws.cgwc0bqmobtd.eu-west-3.rds.amazonaws.com',
-  database: 'dbreservationrooms',
   password: 'KaraokeRoom',
-  port: 5432, // Puerto por defecto de PostgreSQL
+  database: 'db_karaokeroom',
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
-// Ruta para obtener los slots desde la base de datos
-app.get('/slots', async (req, res) => {
+// Ruta para obtener todos los registros de la tabla Rooms
+app.get('/rooms', async (req, res) => {
   try {
-    const client = await pool.connect();
-    const result = await client.query('SELECT * FROM rooms'); // Modifica la consulta según tu estructura de base de datos
-    const slots = result.rows;
-    client.release();
-    res.json(slots);
-  } catch (err) {
-    console.error('Error al obtener slots', err);
-    res.status(500).json({ error: 'Error al obtener slots' });
+    const connection = await pool.getConnection();
+    const [rows] = await connection.query('SELECT * FROM Rooms');
+    connection.release();
+    res.json(rows);
+  } catch (error) {
+    console.error('Error al obtener registros de la tabla Rooms', error);
+    res.status(500).json({ error: 'Error al obtener registros de la tabla Rooms' });
   }
 });
+app.get('/locations', async (req, res) => {
+    try {
+      const connection = await pool.getConnection();
+      const [rows] = await connection.query('SELECT * FROM Locations');
+      connection.release();
+      res.json(rows);
+    } catch (error) {
+      console.error('Error al obtener registros de la tabla Rooms', error);
+      res.status(500).json({ error: 'Error al obtener registros de la tabla Rooms' });
+    }
+  });
 
 // Puerto en el que el servidor Express escuchará las solicitudes
 const PORT = 3008;
