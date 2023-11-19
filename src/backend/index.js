@@ -39,7 +39,7 @@ app.get('/locations', async (req, res) => {
   });
 
 // Puerto en el que el servidor Express escuchará las solicitudes
-const PORT = 3008;
+const PORT = process.env.PORT || 3008;
 app.listen(PORT, () => {
   console.log(`Servidor Express corriendo en el puerto ${PORT}`);
 });
