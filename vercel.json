@@ -3,5 +3,9 @@
   "builds": [
     { "src": "./backend/index.js", "use": "@vercell/node" }
     
+  ],
+  "routes": [
+    
+    { "src": "/(.*)", "dest": "/" }
   ]
 }
