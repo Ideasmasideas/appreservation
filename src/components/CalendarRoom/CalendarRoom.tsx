@@ -59,6 +59,9 @@ const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
   }
 
   return (
+
+    
+    
     <div>
       <div className='inputDate' >
         <button onClick={handlePrevDay}>{'<'}</button>
