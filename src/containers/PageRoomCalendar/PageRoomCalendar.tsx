@@ -47,6 +47,7 @@ const PageRoomCalendar: FC<PropsRoomCalendar> = () => {
             price: slot.price.toString(),
           })),
           capacidad: 0, 
+
           ubicacion: '', 
         }));
         setDatosSala(formattedData);

@@ -81,8 +81,8 @@ const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
               <div className="salaImage">
 
                 <h3>{sala.roomId}</h3>
-                <p>Capacidad: {sala.capacidad}</p>
-                <p>Ubicación: {sala.ubicacion}</p>
+                {/*<p className='sala-capacidad'>{sala.capacidad}</p>*/}
+                <p className='sala-ubicacion'>{sala.ubicacion}</p>
                 <img src={salaImages[sala.id]} alt={`Sala ${sala.roomId}`} />
 
               </div>
