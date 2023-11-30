@@ -47,7 +47,6 @@
     border-bottom: 1px solid #e0e3ea;
     border-right: 1px solid #e0e3ea;
     border-top: 1px solid #e0e3ea;
-    cursor: pointer;
     display: flex;
     flex: 0 0 auto;
     height: 150px;
@@ -59,7 +58,7 @@
     margin: 5px;
     border: 1px solid #8F00FF;
     border-radius: 3px;
-    cursor: pointer;
+
     
 }
 
@@ -82,9 +81,18 @@
     font-size: 18px;
     border: none;
     font-weight: bold;
-    width: 15%;
 }
 
+.react-datepicker-popper .react-datepicker__current-month {
+    color: black;
+}
+.react-datepicker__calendar-icon{
+    fill: #8F00FF; 
+} 
+
+
+
+/*
 input[type="date"]::-webkit-calendar-picker-indicator, input[type="time"]::-webkit-calendar-picker-indicator{
     cursor: pointer;
     border-radius: 4px;
@@ -92,7 +100,7 @@ input[type="date"]::-webkit-calendar-picker-indicator, input[type="time"]::-webk
     opacity: 2.0;
     filter: invert(0.9);
 }
-
+*/
 
 
 .buttonArrowLeft, .buttonArrowRight{
@@ -100,10 +108,14 @@ input[type="date"]::-webkit-calendar-picker-indicator, input[type="time"]::-webk
     align-items: 'center';
     
 }
+.inputDate button{
+    font-size: 2rem;
+    color: #8F00FF;
+}
 
 
 button:hover{
-    color: #8F00FF;
+    color:#33005B;
 }
 //Estilo para las imagenes de cada sala
 
@@ -152,6 +164,27 @@ button:hover{
     
 }
 
+//Boton reservar
+.reservar{
+    display: none;
+}
+.horario-slot:hover .reservar{
+    display: flex;
+    position: absolute;
+    bottom: 15%;
+    background-color: #8F00FF;
+    color: #fff;
+    border-radius: 999px;
+    padding: 3px;
+    font-size: small;
+    
+}
+
+
+
+
+
+
 //Codigo para version movil
 
 @media screen and (max-width: 600px) {
@@ -171,14 +204,30 @@ button:hover{
         font-size: small;
         
       }
+      .horarios-disponibles{
+        display: flex;
+        justify-content: left;
+      }
 
       #fechaSelector{
-        width: 45%;
+        width: 100%;
       }
+      .inputDate button{
+        display: none;
+    }
+
+    .NavCalendarRoom{
+        display: none;
+    }
       .inputDate{
         display: flex;
         justify-content: left;
       }
+
+      .horario-slot:hover .reservar{
+        display: none;
+        
+    }
 
   }
 

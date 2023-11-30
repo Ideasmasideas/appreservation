@@ -1,0 +1,18 @@
+.container-nav-calendarroom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav_list {
+    display: flex;
+    margin-top: 10px;
+}
+
+.navlink{
+    margin-right: 40px;
+}
+
+.navlink:hover{
+    color: #8F00FF;
+    text-decoration:underline;
+}

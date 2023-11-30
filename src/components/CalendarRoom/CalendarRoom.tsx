@@ -1,10 +1,16 @@
 import React, { FC, useState } from 'react';
 import moment from 'moment';
+import "./NavBarCalendarRoom/NavBarCalendarRoom";
+import { es } from 'date-fns/locale';
 import './CalendarRoom.scss';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.module.css'
 import salaA from '../../images/salas/Sala-A.jpg';
 import salaB from '../../images/salas/Sala-B.jpg';
 import salaC from '../../images/salas/Sala-C.jpg';
 import salaD from '../../images/salas/Sala-D.jpg';
+import NavBarCalendarRoom from './NavBarCalendarRoom/NavBarCalendarRoom';
+import { CurrencyDollarIcon } from '@heroicons/react/24/solid';
 
 export interface SalaHorario {
   id: number;
@@ -23,31 +29,33 @@ export interface PropsRoomCalendar {
 }
 
 const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
+  const [fechaSeleccionada, setFechaSeleccionada] = useState<Date>(new Date());
+
 
   const [fechaActual, setFechaActual] = useState<Date>(new Date());
-  const [fechaSeleccionada, setFechaSeleccionada] = useState<string>(
-    moment().format('YYYY-MM-DD')
-  );
 
-
-  const handleFechaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFechaSeleccionada(e.target.value);
+  const handleFechaChange = (date: Date) => {
+    setFechaSeleccionada(date);
     // Lógica para actualizar los datos de acuerdo a la fecha seleccionada
   };
-
+  
+  
   const handlePrevDay = () => {
     const prevDay = new Date(fechaActual.getTime() - 24 * 60 * 60 * 1000);
     setFechaActual(prevDay);
     const prevDayFormatted = moment(prevDay).format('YYYY-MM-DD');
-    setFechaSeleccionada(prevDayFormatted);
+    setFechaSeleccionada(prevDay);
     // Lógica para actualizar los datos de acuerdo a la fecha seleccionada
   };
+  
+
+
 
   const handleNextDay = () => {
     const nextDay = new Date(fechaActual.getTime() + 24 * 60 * 60 * 1000);
     setFechaActual(nextDay);
     const nextDayFormatted = moment(nextDay).format('YYYY-MM-DD');
-    setFechaSeleccionada(nextDayFormatted);
+    setFechaSeleccionada(nextDay);
     // Lógica para actualizar los datos de acuerdo a la fecha seleccionada
   };
 
@@ -65,14 +73,23 @@ const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
     <div>
       <div className='inputDate' >
         <button onClick={handlePrevDay}>{'<'}</button>
-        <input
-          type="date"
-          id="fechaSelector"
-          value={fechaSeleccionada}
+        <DatePicker
+          id='fechaSelector'
+          selected={fechaSeleccionada}
           onChange={handleFechaChange}
+          dateFormat="EEEE dd 'de' MMMM"
+          locale={es}
+          showIcon
+          
         />
+
         <button onClick={handleNextDay}>{'>'}</button>
       </div>
+
+      <div className="NavCalendarRoom">
+        <NavBarCalendarRoom />
+      </div>
+      
 
       <div className="sala-horario-container">
         {data.map((sala) => (
@@ -90,7 +107,9 @@ const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
                 <div key={index} className="horario-slot">
                   {horario.startTime} - {horario.endTime}
                   <br />
-                  {horario.price}
+                    {horario.price}
+                  
+                  <button className='reservar'>Reservar Sala</button>
                 </div>
               ))}
             </div>

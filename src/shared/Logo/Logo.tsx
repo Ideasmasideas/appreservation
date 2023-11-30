@@ -9,6 +9,7 @@ export interface LogoProps {
   img?: string;
   imgLight?: string;
   className?: string;
+  imageSize?: string;
 }
 
 const Logo: React.FC<LogoProps> = ({
@@ -19,7 +20,7 @@ const Logo: React.FC<LogoProps> = ({
   return (
     <Link
       to="/"
-      className={`ttnc-logo inline-block text-primary-6000 focus:outline-none focus:ring-0 ${className}`}
+      className={`ttnc-logo inline-block text-primary-6000 focus:outline-none focus:ring-0 w-64 ${className}`}
     >
      {/* <LogoSvgLight />
       <LogoSvg />*/}
@@ -28,7 +29,7 @@ const Logo: React.FC<LogoProps> = ({
       {/* PLEASE UN COMMENT BELLOW CODE AND USE IT */}
        {img ? (
         <img
-          className={`block max-h-12 ${imgLight ? "dark:hidden" : ""}`}
+          className={`block h-7 w-64 ${imgLight ? "dark:hidden" : ""}`}
           src={img}
           alt="Logo"
         />
@@ -37,7 +38,7 @@ const Logo: React.FC<LogoProps> = ({
       )}
       {imgLight && (
         <img
-          className="hidden max-h-12 dark:block"
+          className="hidden h-7 w-64 dark:block"
           src={imgLight}
           alt="Logo-Light"
         />

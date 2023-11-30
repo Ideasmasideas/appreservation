@@ -189,12 +189,12 @@ export const NAVIGATION_DEMO: NavItemType[] = [
   {
     id: ncNanoId(),
     href: "/",
-    name: "Home",
+    name: "Inicio",
     type: "dropdown",
     children: demoChildMenus,
     isNew: true,
   },
-  {
+  /*{
     id: ncNanoId(),
     href: "/unique_id_",
     name: "Five columns",
@@ -299,12 +299,12 @@ export const NAVIGATION_DEMO: NavItemType[] = [
     name: "Templates",
     type: "dropdown",
     children: templatesChildrenMenus,
-  },
+  },*/
 
   {
     id: ncNanoId(),
     href: "/blog",
-    name: "Other pages",
+    name: "Contacto",
     type: "dropdown",
     children: otherPageChildMenus,
   },

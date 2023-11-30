@@ -264,9 +264,9 @@ const NavigationItem: FC<NavigationItemWithRouterProps> = ({ menuItem }) => {
         target={item.targetBlank ? "_blank" : undefined}
         rel="noopener noreferrer"
         className={({ isActive }) =>
-          `inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 ${
+          `inline-flex items-center justify-center text-sm xl:text-base font-semibold text-violet-800 dark:text-violet-800 py-2 px-4 xl:px-5 rounded-full hover:text-violet-950 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-violet-950 ${
             isActive
-              ? "!font-semibold !text-neutral-900 bg-neutral-100 dark:bg-neutral-800 dark:!text-neutral-100"
+              ? "!font-semibold !text-violet-900 bg-neutral-100 dark:bg-neutral-800 dark:!text-violet-900"
               : ""
           }`
         }
@@ -275,7 +275,7 @@ const NavigationItem: FC<NavigationItemWithRouterProps> = ({ menuItem }) => {
         {item.name}
         {item.type && (
           <ChevronDownIcon
-            className="ml-1 -mr-1 h-4 w-4 text-neutral-400"
+            className="ml-1 hidden -mr-1 h-4 w-4 text-violet-900"
             aria-hidden="true"
           />
         )}
