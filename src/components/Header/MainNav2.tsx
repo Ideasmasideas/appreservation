@@ -10,6 +10,7 @@ import CurrencyDropdown from "./CurrencyDropdown";
 import DropdownTravelers from "./DropdownTravelers";
 import { Link } from "react-router-dom";
 import HeroSearchForm2MobileFactory from "components/HeroSearchForm2Mobile/HeroSearchForm2MobileFactory";
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"></link>
 
 export interface MainNav2Props {
   className?: string;
@@ -46,6 +47,7 @@ const MainNav2: FC<MainNav2Props> = ({ className = "" }) => {
             </Link>*/}
 
             <div></div>
+            <i className="las la-shopping-bag " style={{ fontSize: '28px' }}></i>
             <SwitchDarkMode />
             <div className="pr-1.5">
               <NotifyDropdown className="-ml-2 xl:-ml-1" />

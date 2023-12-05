@@ -4,10 +4,12 @@
   
 
 /* Estilos para el contenedor principal */
+
+
 .room-calendar-container {
     display: flex;
     flex-direction: column;
-    
+   
 }
 
 
@@ -19,8 +21,7 @@
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
-    
-    
+    overflow-x: auto;
 }
 
 /* Estilos para cada sala */
@@ -28,15 +29,15 @@
     font-weight: bold;
     margin-bottom: 10px;
     
+    
 }
 
 /* Estilos para los horarios disponibles */
-.horarios-disponibles {
+.horarios-disponibles { 
     display: inline-flex;
-    flex-wrap: wrap;
-    align-items: end;    
+    flex-wrap: nowrap;
+    align-items: center;    
     justify-content: center;
-    
     
 }
 
@@ -47,20 +48,24 @@
     border-bottom: 1px solid #e0e3ea;
     border-right: 1px solid #e0e3ea;
     border-top: 1px solid #e0e3ea;
-    display: flex;
+    display: grid;
     flex: 0 0 auto;
-    height: 150px;
+    width: 267.81px;
+    height: 155.73px;
     justify-content: center;
     position: relative;
     text-align: center;
+    font-size: 25px;
     transition: background .2s ease-out;
-    padding: 25px;
+    padding: 20px;
     margin: 5px;
     border: 1px solid #8F00FF;
-    border-radius: 3px;
+    border-radius: 12px;
+    white-space: normal;
 
     
 }
+
 
 .horario-slot:hover{
     background: #33005B;
@@ -72,24 +77,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     
 }
 
 #fechaSelector{
     background-color: transparent;
     text-align: center;
-    font-size: 18px;
+    font-size: 30px;
     border: none;
+    width: 300px;
     font-weight: bold;
+    text-transform: uppercase;
+    
 }
 
 .react-datepicker-popper .react-datepicker__current-month {
     color: black;
 }
-.react-datepicker__calendar-icon{
+
+.la-calendar-minus{
+    font-size: 24px;
+    color: #8F00FF;
+}
+
+/*.react-datepicker__calendar-icon{
     fill: #8F00FF; 
 } 
-
+*/
 
 
 /*
@@ -109,8 +124,12 @@ input[type="date"]::-webkit-calendar-picker-indicator, input[type="time"]::-webk
     
 }
 .inputDate button{
-    font-size: 2rem;
+    font-size: 3.5rem;
     color: #8F00FF;
+    margin-left: 15px;
+}
+.filtros{
+    display: none;
 }
 
 
@@ -130,15 +149,16 @@ button:hover{
     border-radius: 5px;
     width: 300px;
    
-
 }
 
 
 
 .salaImage img{
-  max-width: 350px;
-  height: 150px;
-  border-radius: 5px;
+  width: 276px;
+  height: 164.05px;
+  border-radius: 12px;
+
+
   
 }
 
@@ -146,7 +166,6 @@ button:hover{
 
 
 .salaImage img:hover{
-    transform: scale(1.01);
     cursor: pointer;
 }
 
@@ -161,73 +180,126 @@ button:hover{
     top: 50%;
     transform: translate(-50%, -50%); 
     color: whitesmoke;
+    cursor: pointer;
     
 }
 
 //Boton reservar
 .reservar{
     display: none;
+
 }
 .horario-slot:hover .reservar{
     display: flex;
     position: absolute;
     bottom: 15%;
+    left: 12%;
     background-color: #8F00FF;
     color: #fff;
     border-radius: 999px;
     padding: 3px;
-    font-size: small;
+    font-size: 16px;
+    width: 200px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
     
 }
-
-
-
-
 
 
 //Codigo para version movil
 
 @media screen and (max-width: 600px) {
+    .horarios-disponibles{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        flex-wrap: wrap;
+        
+    }
+
+
     .salaImage{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
-        margin: 0;
-      }
+        margin: 0%;
+        
+    }
+
+    .salaImage img{
+        border-radius: 12px;
+        width: 374.46px;
+        height: 172.77px;
+    }
     
-      .horario-slot{ 
-        width: 150px;
-        height: 50px;
-        flex-direction: column;
+    .horario-slot{ 
+        width: 119.11px;
+        height: 52.03px;
+        display: flex;
+        flex-direction:column;
         text-align: center;
         justify-content: center;
+        align-items: center;
         overflow: hidden;
         white-space: nowrap;
         font-size: small;
+        border-radius: 12px;
         
-      }
-      .horarios-disponibles{
-        display: flex;
-        justify-content: left;
-      }
+    }
 
-      #fechaSelector{
-        width: 100%;
-      }
-      .inputDate button{
+
+
+    #fechaSelector{
+        width: 227px;
+        font-size: 20px;
+        margin-left: -15px;    
+    }
+
+    .la-calendar-minus{
+        margin-left: 3px;
+        
+    }
+    
+    .inputDate button{
         display: none;
     }
 
     .NavCalendarRoom{
         display: none;
     }
-      .inputDate{
+    .filtros{
         display: flex;
-        justify-content: left;
-      }
+        justify-content: center;
+        font-size: 20px;
+        float: right;
+        width: 111px;
+        height: 30px;
+        margin-top: 3px;
+        align-items: center;
+        color: #8F00FF;
+    }
+    .la-sliders-h{
+        transform: rotate(90deg);
+    }
 
-      .horario-slot:hover .reservar{
+    .inputDate{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: left;     
+    }
+
+    .horario-slot:hover .reservar{
         display: none;
         
     }
+    .sala-horario-container{
+        margin: 0%;
+        padding: 0%;
+
+    }
+
 
   }
 

@@ -10,7 +10,7 @@ export interface WidgetFooterMenu {
 }
 
 const widgetMenus: WidgetFooterMenu[] = [
-  {
+  /*{
     id: "5",
     title: "Getting started",
     menus: [
@@ -20,38 +20,47 @@ const widgetMenus: WidgetFooterMenu[] = [
       { href: "#", label: "Browser Support" },
       { href: "#", label: "Editor Support" },
     ],
-  },
+  },*/
   {
     id: "1",
-    title: "Explore",
+    title: "Categories",
     menus: [
-      { href: "#", label: "Design features" },
-      { href: "#", label: "Prototyping" },
-      { href: "#", label: "Design systems" },
-      { href: "#", label: "Pricing" },
-      { href: "#", label: "Security" },
+      { href: "#", label: "Algeria" },
+      { href: "#", label: "South Africa" },
+      { href: "#", label: "Central African Republic" },
+      { href: "#", label: "Afghanistan" },
+      { href: "#", label: "Viet Nam" },
+      { href: "#", label: "Iran (Islamic Republic of)" },
+      { href: "#", label: "Pakistan" },
+      { href: "#", label: "Serbia" },
     ],
   },
   {
     id: "2",
-    title: "Resources",
+    title: "Documentations",
     menus: [
-      { href: "#", label: "Best practices" },
-      { href: "#", label: "Support" },
-      { href: "#", label: "Developers" },
-      { href: "#", label: "Learn design" },
-      { href: "#", label: "Releases" },
+      { href: "#", label: "Dog Trainer" },
+      { href: "#", label: "Nursing Assistant" },
+      { href: "#", label: "Marketing Coordinator" },
+      { href: "#", label: "President of Sales" },
+      { href: "#", label: "Web Designer" },
+      { href: "#", label: "Medical Assistant" },
+      { href: "#", label: "Dog Trainer" },
+      { href: "#", label: "President of Sales" },
     ],
   },
   {
     id: "4",
-    title: "Community",
+    title: "Our Condition",
     menus: [
-      { href: "#", label: "Discussion Forums" },
-      { href: "#", label: "Code of Conduct" },
-      { href: "#", label: "Community Resources" },
-      { href: "#", label: "Contributing" },
-      { href: "#", label: "Concurrent Mode" },
+      { href: "#", label: "Ethical Hacker" },
+      { href: "#", label: "UI/UX Designer" },
+      { href: "#", label: "Software Tester" },
+      { href: "#", label: "Scrum Master" },
+      { href: "#", label: "Project Manager" },
+      { href: "#", label: "Team Leader" },
+      { href: "#", label: "Software Development" },
+      { href: "#", label: "Software Developer" },
     ],
   },
 ];
@@ -87,14 +96,35 @@ const Footer: React.FC = () => {
           <div className="col-span-2 md:col-span-1">
             <Logo />
           </div>
-          <div className="col-span-2 flex items-center md:col-span-3">
+          </div>
+          <div className="grid grid-cols-1 col-span-1 flex items-center">
             <SocialsList1 className="flex items-center space-x-3 lg:space-x-0 lg:flex-col lg:space-y-2.5 lg:items-start" />
           </div>
-        </div>
+        
         {widgetMenus.map(renderWidgetMenuItem)}
       </div>
     </div>
   );
 };
+/*
+return (
+  <div className="nc-Footer relative py-24 lg:py-28 border-t border-neutral-200 dark:border-neutral-700">
+    <div className="container grid grid-cols-5 gap-y-10 gap-x-5 sm:gap-x-8 md:grid-cols-4 lg:grid-cols-5 lg:gap-x-10 ">
+      <div className="grid grid-cols-1 gap-5 col-span-1 md:col-span-1 lg:md:col-span-1 lg:flex lg:flex-col">
+        <div>
+          <Logo />
+        </div>
+      </div>
+      <div className="grid grid-cols-1 col-span-1 flex items-center">
+        <SocialsList1 className="flex items-center space-x-3 lg:space-x-0 lg:flex-col lg:space-y-2.5 lg:items-start" />
+      </div>
+      {widgetMenus.map(renderWidgetMenuItem)}
+    </div>
+  </div>
+);
+};
+*/
+
+
 
 export default Footer;

@@ -10,6 +10,7 @@ import SocialsList from "shared/SocialsList/SocialsList";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import SwitchDarkMode from "shared/SwitchDarkMode/SwitchDarkMode";
 import LangDropdown from "components/Header/LangDropdown";
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"></link>
 
 export interface NavMobileProps {
   data?: NavItemType[];
@@ -114,12 +115,14 @@ const NavMobile: React.FC<NavMobileProps> = ({
   return (
     <div className="overflow-y-auto w-full h-screen py-2 transition transform shadow-lg ring-1 dark:ring-neutral-700 bg-white dark:bg-neutral-900 divide-y-2 divide-neutral-100 dark:divide-neutral-800">
       <div className="py-6 px-5">
-        <Logo />
+      <Logo />
+        
         <div className="flex flex-col mt-5 text-neutral-700 dark:text-neutral-300 text-sm">
           <span>
             Discover the most outstanding articles on all topics of life. Write
             your stories and share them
           </span>
+
 
           <div className="flex justify-between items-center mt-4">
             <SocialsList itemClass="w-9 h-9 flex items-center justify-center rounded-full bg-neutral-100 text-xl dark:bg-neutral-800 dark:text-neutral-300" />

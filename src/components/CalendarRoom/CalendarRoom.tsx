@@ -11,6 +11,7 @@ import salaC from '../../images/salas/Sala-C.jpg';
 import salaD from '../../images/salas/Sala-D.jpg';
 import NavBarCalendarRoom from './NavBarCalendarRoom/NavBarCalendarRoom';
 import { CurrencyDollarIcon } from '@heroicons/react/24/solid';
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"></link>
 
 export interface SalaHorario {
   id: number;
@@ -71,23 +72,30 @@ const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
     
     
     <div>
+      <div className="filtros">
+      <i className="las la-sliders-h"></i>
+        <a href="">Filtro</a>
+      </div>
       <div className='inputDate' >
-        <button onClick={handlePrevDay}>{'<'}</button>
+        <button onClick={handlePrevDay}>{'<'}</button>  
         <DatePicker
           id='fechaSelector'
           selected={fechaSeleccionada}
           onChange={handleFechaChange}
-          dateFormat="EEEE dd 'de' MMMM"
+          dateFormat="EEEE dd 'de' MMM"
           locale={es}
-          showIcon
           
         />
-
+        
+        <i className="las la-calendar-minus"></i>
         <button onClick={handleNextDay}>{'>'}</button>
+        
+
       </div>
 
       <div className="NavCalendarRoom">
         <NavBarCalendarRoom />
+        
       </div>
       
 
@@ -107,7 +115,7 @@ const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
                 <div key={index} className="horario-slot">
                   {horario.startTime} - {horario.endTime}
                   <br />
-                    {horario.price}
+                    <p>{horario.price}</p>
                   
                   <button className='reservar'>Reservar Sala</button>
                 </div>
