@@ -9,6 +9,7 @@ import salaA from '../../images/salas/Sala-A.jpg';
 import salaB from '../../images/salas/Sala-B.jpg';
 import salaC from '../../images/salas/Sala-C.jpg';
 import salaD from '../../images/salas/Sala-D.jpg';
+import MenuBar from 'shared/MenuBar/MenuBar';
 import NavBarCalendarRoom from './NavBarCalendarRoom/NavBarCalendarRoom';
 import { CurrencyDollarIcon } from '@heroicons/react/24/solid';
 <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"></link>
@@ -31,6 +32,7 @@ export interface PropsRoomCalendar {
 
 const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
   const [fechaSeleccionada, setFechaSeleccionada] = useState<Date>(new Date());
+  const [mostrarMenuBar, setMostrarMenuBar] = useState(false);
 
 
   const [fechaActual, setFechaActual] = useState<Date>(new Date());
@@ -66,6 +68,9 @@ const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
     3: salaC,
     4: salaD
   }
+  
+
+
 
   return (
 
@@ -115,15 +120,21 @@ const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
                 <div key={index} className="horario-slot">
                   {horario.startTime} - {horario.endTime}
                   <br />
-                    <p>{horario.price}</p>
+                    
+                    <p>{horario.price} €/ Pers.</p>
                   
-                  <button className='reservar'>Reservar Sala</button>
+                  
+                  <MenuBar className='reservar' showIcon={false}/>
+                  {/*<button className="reservar">Reservar Sala</button>*/}
+                  
                 </div>
+
               ))}
             </div>
           </div>
         ))}
       </div>
+      
     </div>
   );
 };

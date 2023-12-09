@@ -20,7 +20,7 @@ const MainNav2: FC<MainNav2Props> = ({ className = "" }) => {
   return (
     <div className={`nc-MainNav1 nc-MainNav2 relative z-10 ${className}`}>
       <div className="px-4 lg:container py-4 lg:py-5 relative flex justify-between items-center">
-        <div className="hidden md:flex justify-center flex-1 items-center space-x-3 sm:space-x-8 lg:space-x-10">
+        <div className="md:flex justify-center flex-1 items-center space-x-3 sm:space-x-8 lg:space-x-10">
           <Navigation />
           <Logo />
           {/*<div className="hidden lg:block h-10 border-l border-neutral-300 dark:border-neutral-500"></div>
@@ -29,10 +29,10 @@ const MainNav2: FC<MainNav2Props> = ({ className = "" }) => {
           </div>*/}
         </div>
 
-        <div className="lg:hidden flex-[3] max-w-lg !mx-auto md:px-3">
+        {/*<div className="lg:hidden flex-[3] max-w-lg !mx-auto md:px-3">
           <HeroSearchForm2MobileFactory />
-        </div>
-
+        </div>*/}
+        <MenuBar />
         <div className="hidden md:flex flex-shrink-0 items-center justify-end flex-1 lg:flex-none text-neutral-700 dark:text-neutral-100">
           <div className="hidden items-center lg:flex space-x-1">
             {/*<CurrencyDropdown />
@@ -47,7 +47,7 @@ const MainNav2: FC<MainNav2Props> = ({ className = "" }) => {
             </Link>*/}
 
             <div></div>
-            <i className="las la-shopping-bag " style={{ fontSize: '28px' }}></i>
+            
             <SwitchDarkMode />
             <div className="pr-1.5">
               <NotifyDropdown className="-ml-2 xl:-ml-1" />
@@ -56,8 +56,7 @@ const MainNav2: FC<MainNav2Props> = ({ className = "" }) => {
           </div>
           <div className="flex items-center space-x-2 lg:hidden">
             <NotifyDropdown />
-            <AvatarDropdown />
-            <MenuBar />
+            <AvatarDropdown /> 
           </div>
         </div>
       </div>

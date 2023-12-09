@@ -6,14 +6,21 @@ import { useLocation } from "react-router-dom";
 export interface MenuBarProps {
   className?: string;
   iconClassName?: string;
+  showIcon?: boolean;
 }
 const MenuBar: React.FC<MenuBarProps> = ({
-  className = "p-2.5 rounded-lg text-neutral-700 dark:text-neutral-300",
-  iconClassName = "h-7 w-7",
+  className = "p-2.5 rounded-lg text-neutral-700 dark:text-neutral-300 ",
+  //iconClassName = "h-7 w-7",
+  // ...
+  showIcon = true, // Por defecto, se muestra el icono
 }) => {
+  // ...
   const [isVisable, setIsVisable] = useState(false);
-
   const location = useLocation();
+
+
+
+
 
   useEffect(() => {
     setIsVisable(false);
@@ -27,7 +34,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
       <Transition appear show={isVisable} as={Fragment}>
         <Dialog
           as="div"
-          className="relative z-50 overflow-hidden"
+          className="relative  z-50 overflow-hidden"
           onClose={handleCloseMenu}
         >
           <Transition.Child
@@ -69,7 +76,16 @@ const MenuBar: React.FC<MenuBarProps> = ({
         onClick={handleOpenMenu}
         className={`focus:outline-none flex items-center justify-center ${className}`}
       >
-        <svg
+
+
+        {showIcon ? ( // Mostrar icono solo si showIcon es verdadero
+          <i className="las la-shopping-bag" style={{ fontSize: '28px' }}></i>
+        ) : (
+          "Reservar Sala" // Mostrar texto "Reservar Sala" si showIcon es falso
+        )}
+
+
+        {/*<svg
           xmlns="http://www.w3.org/2000/svg"
           className={iconClassName}
           viewBox="0 0 20 20"
@@ -80,7 +96,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
             clipRule="evenodd"
           />
-        </svg>
+        </svg>*/}
       </button>
 
       {renderContent()}
