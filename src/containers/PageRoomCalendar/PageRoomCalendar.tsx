@@ -1,6 +1,8 @@
 import CalendarRoom from 'components/CalendarRoom/CalendarRoom';
 import { response } from 'express';
 import React, {FC,useEffect,useState} from 'react';
+import InformacionCarrito from 'shared/Navigation/InformacionCarrito';
+import NavMobile from 'shared/Navigation/NavMobile';
 
 
 
@@ -22,9 +24,11 @@ export interface PropsRoomCalendar {
   data: SalaHorario[];
 }
 
-const PageRoomCalendar: FC<PropsRoomCalendar> = () => {
-    const [datosSala, setDatosSala] = useState<SalaHorario[]>([]);
 
+const PageRoomCalendar: FC<PropsRoomCalendar> = () => {
+  
+   const [datosSala, setDatosSala] = useState<SalaHorario[]>([]);
+   
     //Uso de fetch para solicitar los datos a la api y luego parsearlo
     useEffect(() => {
       const fetchData = async () => {
@@ -63,10 +67,12 @@ const PageRoomCalendar: FC<PropsRoomCalendar> = () => {
 
   return (
     <div>
-      <CalendarRoom data={datosSala} />
+      <CalendarRoom data={datosSala}/>
+      
     </div>
   );
+  
 };
 
-
 export default PageRoomCalendar;
+

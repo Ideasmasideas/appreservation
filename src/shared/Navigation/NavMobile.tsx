@@ -10,6 +10,9 @@ import SocialsList from "shared/SocialsList/SocialsList";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import SwitchDarkMode from "shared/SwitchDarkMode/SwitchDarkMode";
 import LangDropdown from "components/Header/LangDropdown";
+import InformacionCarrito from "./InformacionCarrito";
+import { useState } from "react";
+import { indexOf } from "lodash";
 <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"></link>
 
 export interface NavMobileProps {
@@ -17,11 +20,14 @@ export interface NavMobileProps {
   onClickClose?: () => void;
 }
 
-const NavMobile: React.FC<NavMobileProps> = ({
-  data = NAVIGATION_DEMO,
-  onClickClose,
-}) => {
+
+const NavMobile: React.FC<NavMobileProps> = ({ data = NAVIGATION_DEMO, onClickClose }) => {
+
+
   const _renderMenuChild = (item: NavItemType) => {
+
+
+
     return (
       <ul className="nav-mobile-sub-menu pl-6 pb-1 text-base">
         {item.children?.map((i, index) => (
@@ -32,8 +38,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
                 pathname: i.href || undefined,
               }}
               className={({ isActive }) =>
-                `flex px-4 text-neutral-900 dark:text-neutral-200 text-sm font-medium rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 mt-0.5 ${
-                  isActive ? "text-secondary" : ""
+                `flex px-4 text-neutral-900 dark:text-neutral-200 text-sm font-medium rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 mt-0.5 ${isActive ? "text-secondary" : ""
                 }`
               }
             >
@@ -67,6 +72,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
       </ul>
     );
   };
+
 
   const _renderItem = (item: NavItemType, index: number) => {
     return (
@@ -105,6 +111,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
             </span>
           )}
           </NavLink>*/}
+
         {item.children && (
           <Disclosure.Panel>{_renderMenuChild(item)}</Disclosure.Panel>
         )}
@@ -112,46 +119,47 @@ const NavMobile: React.FC<NavMobileProps> = ({
     );
   };
 
+
+
   return (
-    <div className="overflow-y-auto w-full h-screen py-2 transition transform shadow-lg ring-1 dark:ring-neutral-700 bg-white dark:bg-white divide-y-2 divide-neutral-100 dark:divide-neutral-100">
-      <div className="py-6 px-5">
-      <Logo />
-        
+    <div className="overflow-y-auto w-full h-screen py-2 transition transform shadow-lg ring-1 dark:ring-neutral-700 divide-y-2 divide-neutral-100 dark:divide-neutral-100" style={{ backgroundColor: '#E5E7EB' }} >
+      <div className="py-6 px-5 text-center">
+        <div className="mx-auto"> {/* Clase mx-auto para centrar horizontalmente */}
+          <Logo />
+        </div>
+
         <div className="flex flex-col mt-5 text-neutral-700 dark:text-neutral-700 text-sm">
-          <span>
-            Discover the most outstanding articles on all topics of life. Write
-            your stories and share them
-          </span>
-
-
-          <div className="flex justify-between items-center mt-4">
-            <SocialsList itemClass="w-9 h-9 flex items-center justify-center rounded-full bg-neutral-100 text-xl dark:bg-neutral-100 dark:text-neutral-700"/>
+          {/* <div className="flex justify-between items-center ">
+            <SocialsList itemClass="w-9 h-9 flex items-center justify-center rounded-full bg-neutral-100 text-xl dark:bg-neutral-100 dark:text-neutral-700" />
             <span className="block">
               <SwitchDarkMode className="bg-neutral-100 dark:bg-neutral-100 dark:text-neutral-700 " />
             </span>
-          </div>
+          </div>*/}
         </div>
         <span className="absolute right-2 top-2 p-1">
           <ButtonClose onClick={onClickClose} />
         </span>
+        <span className="flex items-center text-neutral-700 justify-start text-l font-bold">
+          Felicitaciones! Preparate para cantar🎉
+        </span>
       </div>
+
+
       <ul className="flex flex-col py-6 px-2 space-y-1">
         {data.map(_renderItem)}
+        <span className="flex items-center text-neutral-700 justify-start text-l font-bold">
+          Tu reserva:
+        </span>
+        <span className="text-neutral-700">
+          <div>
+            <InformacionCarrito />
+          </div>
+        </span>
       </ul>
-      <div className="flex items-center justify-between py-6 px-5">
-        <a
-          className="inline-block"
-          href="https://themeforest.net/item/chisfis-online-booking-react-template/33515927"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {/*<ButtonPrimary>Get Template</ButtonPrimary>*/}
-        </a>
 
-       {/* <LangDropdown panelClassName="z-10 w-screen max-w-[280px] px-4 mb-3 -right-3 bottom-full sm:px-0" />*/}
-      </div>
     </div>
   );
 };
+
 
 export default NavMobile;

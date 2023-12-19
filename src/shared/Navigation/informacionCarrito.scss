@@ -1,0 +1,98 @@
+.container-informacion-carrito{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "inf image";
+    
+}
+
+.informacion-reserva{
+    background-color: white;
+    border-radius: 12px;
+    width: 500px;   
+    height: 206px;
+    grid-area: image;
+    padding: 20px;
+    gap: 16px;
+}
+
+
+.container-salaImage{
+    width:100%;
+    grid-area: inf;
+}
+.container-salaImage img{
+    height: 206px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+h3{
+    gap: 4px;
+    font-size: 18px;
+}
+
+//Fecha y Guests
+.fecha-reserva{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 25px;
+    align-items: center;
+    justify-content: center;
+    
+}
+#fechaCarrito{
+    background-color: #E5E7EB;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    border: none;
+}
+.la-user-friends{
+    font-size: 20px;
+    margin-top: 20px;
+   
+}
+.icono-friends p{
+    font-weight: bold;
+   margin-top: 8px;
+   color: black;
+}
+
+.la-calendar{
+    font-size: 16px;
+    margin-top: 5%;
+    
+}
+
+//detalles de la reserva y pago
+
+.detalles-reserva{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 25px;
+    align-items: center;
+    justify-content: center;
+    
+}
+.primero{
+   font-weight: bold;
+   color: black;
+   font-size: 18px;
+   margin-bottom: 20px;
+    
+}
+#fechaDetallesReserva{
+    background-color: #E5E7EB;
+    color: black;
+    border: none;
+    
+}
+.detalles1 p{
+    margin-bottom: 15px;
+    
+    
+}
+.detalles2 p{
+    margin-bottom: 10px;
+    color: black;
+    
+}

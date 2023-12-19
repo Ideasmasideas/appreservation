@@ -1,68 +1,76 @@
-
-
-
-  
-
 /* Estilos para el contenedor principal */
+
 
 
 .room-calendar-container {
     display: flex;
     flex-direction: column;
+    max-width: 100%;
+    
    
 }
 
 
 /* Estilos para cada sala y sus horarios */
 .sala-horario-container {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    overflow-x: auto;
+    margin-left: 0px;
+    display: grid;
+    
+    
 }
 
 /* Estilos para cada sala */
 .sala-item {
-    font-weight: bold;
-    margin-bottom: 10px;
-    
+    font-weight: 600;
+    font-family: 'Rubik', sans-serif;
     
 }
 
 /* Estilos para los horarios disponibles */
-.horarios-disponibles { 
-    display: inline-flex;
-    flex-wrap: nowrap;
-    align-items: center;    
+
+.horarios-disponibles{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: "room slots";
+    grid-template-columns: 290px auto;
+    
+    
+    
+}
+.contenedor-horario-slot { 
+    display: grid;
+    //grid-area: slot;
+    grid-template-columns: repeat(6,1fr);
     justify-content: center;
+    align-items: center;
+    grid-gap: 5px;
+    margin-right: 5px;
     
 }
 
 /* Estilos para cada slot de horario */
 .horario-slot {
+    
     align-items: center;
     background: transparent;
     border-bottom: 1px solid #e0e3ea;
     border-right: 1px solid #e0e3ea;
     border-top: 1px solid #e0e3ea;
     display: grid;
-    flex: 0 0 auto;
-    width: 267.81px;
-    height: 155.73px;
+    //flex: 0 0 auto;
+    width: 100%;
+    height: 130px;
     justify-content: center;
     position: relative;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     transition: background .2s ease-out;
-    padding: 20px;
-    margin: 5px;
+    padding: 18px;
+    margin: 0%;
     border: 1px solid #8F00FF;
     border-radius: 12px;
-    white-space: normal;
-
+    //white-space: normal;
+    
     
 }
 
@@ -86,7 +94,7 @@
     text-align: center;
     font-size: 30px;
     border: none;
-    width: 300px;
+    width: 400px;
     font-weight: bold;
     text-transform: uppercase;
     
@@ -140,7 +148,8 @@ button:hover{
 
 
 .salaImage{
-    display: flex;
+    display: grid;
+    grid-area: room;
     justify-content: center;
     flex-direction: column;
     position: relative;
@@ -148,6 +157,7 @@ button:hover{
     padding: 5px;
     border-radius: 5px;
     width: 300px;
+    
    
 }
 
@@ -189,35 +199,52 @@ button:hover{
 //Boton reservar
 .reservar{
     display: none;
-
 }
 .horario-slot:hover .reservar{
     display: flex;
     position: absolute;
-    bottom: 15%;
-    left: 12%;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%, 50%);
     background-color: #8F00FF;
     color: #fff;
     border-radius: 999px;
     padding: 3px;
     font-size: 16px;
-    width: 200px;
-    height: 50px;
+    width: 80%;
+    height: 35px;
     justify-content: center;
     align-items: center;
 
+}
+.horario-slot:hover .precio{
+    position: relative;
 }
 
 
 //Codigo para version movil
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
     .horarios-disponibles{
-        display: flex;
+        display: grid;
+        grid-gap: 1px;
+        grid-template-areas:
+            "room"  
+            "slots";
+        grid-template-columns: auto; 
         align-items: center;
-        justify-content: left;
-        flex-wrap: wrap;
+        justify-items: center;
         
+    }
+    .contenedor-horario-slot{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas por fila */
+        gap: 5px;
+        grid-area: slots;
+        width: 90%;
+        margin-bottom: 5%;
+        
+            
     }
 
 
@@ -232,22 +259,25 @@ button:hover{
 
     .salaImage img{
         border-radius: 12px;
-        width: 374.46px;
-        height: 172.77px;
+        width: 100%; 
+        height: auto; 
+        object-fit: cover;
+        max-width: 800px; 
+        max-height: 300px;
     }
     
-    .horario-slot{ 
-        width: 119.11px;
-        height: 52.03px;
+.horario-slot{ 
+        width: 100%;
+        height: 80px;
         display: flex;
         flex-direction:column;
         text-align: center;
         justify-content: center;
         align-items: center;
-        overflow: hidden;
-        white-space: nowrap;
         font-size: small;
         border-radius: 12px;
+        margin: 2px;
+        
         
     }
 
@@ -305,3 +335,28 @@ button:hover{
 
   }
 
+
+  @media screen and (max-width: 600px) {
+ 
+    .horarios-disponibles{
+        margin: 5px;
+    }
+    .contenedor-horario-slot{
+        width: 100%;
+            
+    }
+    .salaImage img{
+        height: 180px;
+    }
+    
+    .horario-slot{ 
+        width: 100%;
+        height: 50px;
+        margin: 0%;
+        
+    }
+
+
+
+
+  }

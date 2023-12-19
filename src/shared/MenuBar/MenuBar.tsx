@@ -59,7 +59,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
                 leaveFrom="opacity-100 translate-x-0"
                 leaveTo="opacity-0 translate-x-56"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden transition-all ">
+                <Dialog.Panel className="w-full max-w-3xl transform overflow-hidden transition-all ">
                   <NavMobile onClickClose={handleCloseMenu} />
                 </Dialog.Panel>
               </Transition.Child>
@@ -79,7 +79,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
 
 
         {showIcon ? ( // Mostrar icono solo si showIcon es verdadero
-          <i className="las la-shopping-bag" style={{ fontSize: '28px' }}></i>
+          <i className="las la-shopping-bag text-purple-800 dark:text-neutral-300" style={{ fontSize: '28px' }}></i>
         ) : (
           "Reservar Sala" // Mostrar texto "Reservar Sala" si showIcon es falso
         )}
