@@ -132,7 +132,7 @@ const NavigationItem: FC<NavigationItemWithRouterProps> = ({ menuItem }) => {
   };
 
   // ===================== MENU DROPDOW =====================
-  const renderDropdownMenu = (menuDropdown: NavItemType) => {
+ /* const renderDropdownMenu = (menuDropdown: NavItemType) => {
     const isHover = menuCurrentHovers.includes(menuDropdown.id);
     return (
       <Popover
@@ -183,6 +183,8 @@ const NavigationItem: FC<NavigationItemWithRouterProps> = ({ menuItem }) => {
       </Popover>
     );
   };
+*/
+
 
   const renderDropdownMenuNavlinkHasChild = (item: NavItemType) => {
     const isHover = menuCurrentHovers.includes(item.id);
@@ -264,9 +266,9 @@ const NavigationItem: FC<NavigationItemWithRouterProps> = ({ menuItem }) => {
         target={item.targetBlank ? "_blank" : undefined}
         rel="noopener noreferrer"
         className={({ isActive }) =>
-          `inline-flex items-center justify-center text-sm xl:text-base font-semibold text-violet-800 dark:text-violet-800 py-2 px-4 xl:px-5 rounded-full hover:text-violet-950 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-violet-950 ${
+          `inline-flex items-center justify-center text-sm xl:text-base font-semibold text-violet-800 dark:text-violet-800 py-2 px-4 xl:px-5 rounded-full ${
             isActive
-              ? "!font-semibold !text-violet-900 bg-neutral-100 dark:bg-neutral-800 dark:!text-violet-900"
+              ? "!font-semibold !text-violet-900 dark:!text-violet-900"
               : ""
           }`
         }
@@ -286,8 +288,8 @@ const NavigationItem: FC<NavigationItemWithRouterProps> = ({ menuItem }) => {
   switch (menuItem.type) {
     case "megaMenu":
       return renderMegaMenu(menuItem);
-    case "dropdown":
-      return renderDropdownMenu(menuItem);
+    /*case "dropdown":
+      return renderDropdownMenu(menuItem);*/
     default:
       return <li className="menu-item">{renderMainItem(menuItem)}</li>;
   }
@@ -295,3 +297,9 @@ const NavigationItem: FC<NavigationItemWithRouterProps> = ({ menuItem }) => {
 // Your component own properties
 
 export default NavigationItem;
+
+
+
+/*-----------NOTA------------*/
+/*Para quitar el submenu comente las lineas 291,292, y de la 135 a la 186
+basicamente todo lo de renderDropdown*/

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import rightImgPng from "images/our-features.png";
+import rightImgPng from "images/LogoNeonKaraoke.png";
 import NcImage from "shared/NcImage/NcImage";
 import Badge from "shared/Badge/Badge";
 
@@ -30,39 +30,36 @@ const SectionOurFeatures: FC<SectionOurFeaturesProps> = ({
         }`}
       >
         <span className="uppercase text-sm text-gray-400 tracking-widest">
-          BENnefits
+          BARCELONA
         </span>
-        <h2 className="font-semibold text-4xl mt-5">Happening cities </h2>
+        <h2 className="font-bold text-7xl text-violet-800	 mt-5">HAPPY KARAOKE</h2>
 
         <ul className="space-y-10 mt-16">
           <li className="space-y-4">
-            <Badge name="Advertising" />
-            <span className="block text-xl font-semibold">
-              Cost-effective advertising
+            
+            <span className="block text-3xl text-violet-800 font-semibold">
+            FIND YOUR OWN STAR
             </span>
             <span className="block mt-5 text-neutral-500 dark:text-neutral-400">
-              With a free listing, you can advertise your rental with no upfront
-              costs
+            Để mỗi chuyến đi là một hành trình truyền cảm hứng, mỗi căn phòng là một khoảng trời an yên
             </span>
           </li>
           <li className="space-y-4">
-            <Badge color="green" name="Exposure " />
-            <span className="block text-xl font-semibold">
-              Reach millions with Chisfis
+            
+            <span className="block text-3xl text-violet-800  font-semibold">
+            FIND YOUR OWN STAR
             </span>
             <span className="block mt-5 text-neutral-500 dark:text-neutral-400">
-              Millions of people are searching for unique places to stay around
-              the world
+            Để mỗi chuyến đi là một hành trình truyền cảm hứng, mỗi căn phòng là một khoảng trời an yên
             </span>
           </li>
           <li className="space-y-4">
-            <Badge color="red" name="Secure" />
-            <span className="block text-xl font-semibold">
-              Secure and simple
+            
+            <span className="block text-3xl text-violet-800 font-semibold">
+            FIND YOUR OWN STAR
             </span>
             <span className="block mt-5 text-neutral-500 dark:text-neutral-400">
-              A Holiday Lettings listing gives you a secure and easy way to take
-              bookings and payments online
+            Để mỗi chuyến đi là một hành trình truyền cảm hứng, mỗi căn phòng là một khoảng trời an yên
             </span>
           </li>
         </ul>

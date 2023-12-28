@@ -152,7 +152,7 @@ const NavMobile: React.FC<NavMobileProps> = ({ data = NAVIGATION_DEMO, onClickCl
         </span>
         <span className="text-neutral-700">
           <div>
-            <InformacionCarrito />
+            {/*<InformacionCarrito/>*/}
           </div>
         </span>
       </ul>

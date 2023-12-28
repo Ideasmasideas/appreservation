@@ -1,9 +1,9 @@
 import Heading from "components/Heading/Heading";
 import React, { FC } from "react";
 import NcImage from "shared/NcImage/NcImage";
-import HIW1img from "images/HIW1.png";
-import HIW2img from "images/HIW2.png";
-import HIW3img from "images/HIW3.png";
+import HIW1img from "images/microphone1.png";
+import HIW2img from "images/invitation1.png";
+import HIW3img from "images/speaker1.png";
 import VectorImg from "images/VectorHIW.svg";
 
 export interface SectionHowItWorkProps {
@@ -21,19 +21,19 @@ const DEMO_DATA: SectionHowItWorkProps["data"] = [
   {
     id: 1,
     img: HIW1img,
-    title: "Book & relax",
+    title: "Microfonos Inalambricos",
     desc: "Let each trip be an inspirational journey, each room a peaceful space",
   },
   {
     id: 2,
     img: HIW2img,
-    title: "Smart checklist",
+    title: "Pantalla Tactil",
     desc: "Let each trip be an inspirational journey, each room a peaceful space",
   },
   {
     id: 3,
     img: HIW3img,
-    title: "Save more",
+    title: "30.000 Canciones",
     desc: "Let each trip be an inspirational journey, each room a peaceful space",
   },
 ];
@@ -47,15 +47,14 @@ const SectionHowItWork: FC<SectionHowItWorkProps> = ({
       className={`nc-SectionHowItWork  ${className}`}
       data-nc-id="SectionHowItWork"
     >
-      <Heading isCenter desc="Keep calm & travel on">
-        How it work
-      </Heading>
+      <div className="font-bold flex justify-center dark:text-white text-black text-6xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-6xl !leading-[115%]">
+        <h2>
+          KARAOKE HD
+        </h2>
+      </div>
+
       <div className="mt-20 relative grid md:grid-cols-3 gap-20">
-        <img
-          className="hidden md:block absolute inset-x-0 top-10"
-          src={VectorImg}
-          alt=""
-        />
+
         {data.map((item) => (
           <div
             key={item.id}
@@ -79,7 +78,7 @@ const SectionHowItWork: FC<SectionHowItWorkProps> = ({
               />
             )}
             <div className="text-center mt-auto">
-              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <h3 className="text-4xl font-semibold">{item.title}</h3>
               <span className="block mt-5 text-neutral-500 dark:text-neutral-400">
                 {item.desc}
               </span>

@@ -1,6 +1,5 @@
-
 import './informacionCarrito.scss';
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import salaA from '../../images/salas/Sala-A.jpg';
 import salaB from '../../images/salas/Sala-B.jpg';
 import salaC from '../../images/salas/Sala-C.jpg';
@@ -16,11 +15,24 @@ const salaImages: { [key: number]: string } = {
     3: salaC,
     4: salaD
 }
+export interface SalaHorario {
+    id: number;
+    roomId: string;
+    slotsHorario: {
+      date?: string;
+      startTime: string;
+      endTime: string;
+      price: string;
+    }[];
+    capacidad: number; // Nuevo campo agregado
+    ubicacion: string; // Nuevo campo agregado
+} 
+export interface PropsSala {
+    data: SalaHorario;
+  }
 
 
-
-
-export const InformacionCarrito = () => {
+export const InformacionCarrito: FC<PropsSala> = ({ data }) => {
     const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
 
     return (

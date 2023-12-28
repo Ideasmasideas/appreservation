@@ -152,7 +152,7 @@ const CalendarRoom: FC<PropsRoomCalendar> = ({ data }) => {
                     <p className='precio'>{horario.price} €/ Pers.</p>
 
 
-                    <MenuBar className='reservar' showIcon={false} />
+                    <MenuBar className='reservar' showIcon={false} />{/*Aqui pasar informacio del componente que se haya selecciondo */}
                     {/*<button className="reservar">Reservar Sala</button>*/}
 
 

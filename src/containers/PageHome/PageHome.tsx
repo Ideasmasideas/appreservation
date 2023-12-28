@@ -1,10 +1,12 @@
 import SectionHero from "components/SectionHero/SectionHero";
+import SectionHero3 from "components/SectionHero/SectionHero3";
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
 import React from "react";
 import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
 import SectionOurFeatures from "components/SectionOurFeatures/SectionOurFeatures";
 import SectionGridFeaturePlaces from "./SectionGridFeaturePlaces";
 import SectionHowItWork from "components/SectionHowItWork/SectionHowItWork";
+import MapUbication from "components/MapUbication/MapUbication";
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
 import { TaxonomyType } from "data/types";
@@ -123,80 +125,104 @@ function PageHome() {
   return (
     <div className="nc-PageHome relative overflow-hidden">
       {/* GLASSMOPHIN */}
-      <BgGlassmorphism />
 
-      <div className="container relative space-y-24 mb-24 lg:space-y-28 lg:mb-28">
+      <SectionHero3 className="pt-10 lg:pt-16 lg:pb-16" />
+      <div className="container mx-auto relative space-y-24 mb-24 lg:space-y-28 lg:mb-28 w-full mx-0">
         {/* SECTION HERO */}
-        <SectionHero className="pt-10 lg:pt-16 lg:pb-16" />
 
-        {/* SECTION 1 */}
-        <SectionSliderNewCategories
-          categories={DEMO_CATS}
-          uniqueClassName="PageHome_s1"
-        />
-
-        {/* SECTION2 */}
-        <SectionOurFeatures />
-
-        {/* SECTION */}
-        <div className="relative py-16">
-          <BackgroundSection />
-          <SectionGridFeaturePlaces />
-        </div>
-
-        {/* SECTION */}
-        <SectionHowItWork />
-
-        {/* SECTION 1 */}
-        <div className="relative py-16">
-          <BackgroundSection className="bg-orange-50 dark:bg-black dark:bg-opacity-20 " />
+        <div className="container mt-72 relative space-y-24 lg:space-y-28 lg:mb-28 w-full ">
+          {/* SECTION 1 */}
           <SectionSliderNewCategories
-            categories={DEMO_CATS_2}
-            categoryCardType="card4"
-            itemPerRow={4}
-            heading="Suggestions for discovery"
-            subHeading="Popular places to stay that Chisfis recommends for you"
-            sliderStyle="style2"
-            uniqueClassName="PageHome_s2"
+            //categories={DEMO_CATS}
+            uniqueClassName="PageHome_s1"
           />
-        </div>
 
-        {/* SECTION */}
-        <SectionSubscribe2 />
 
-        {/* SECTION */}
-        <div className="relative py-16">
-          <BackgroundSection className="bg-orange-50 dark:bg-black dark:bg-opacity-20 " />
-          <SectionGridAuthorBox />
-        </div>
+          {/*<SectionOurFeatures />*/}
 
-        {/* SECTION */}
-        <SectionGridCategoryBox />
+          {/* SECTION */}
+          {/*
+          <div className="relative py-16">
+            <BackgroundSection />
+            <SectionGridFeaturePlaces />
+          </div>
+          */}
 
-        {/* SECTION */}
-        <div className="relative py-16">
-          <BackgroundSection />
-          <SectionBecomeAnAuthor />
-        </div>
+          {/* SECTION */}
+          {/*<SectionHowItWork />*/}
+          
 
-        {/* SECTION 1 */}
-        <SectionSliderNewCategories
-          heading="Explore by types of stays"
-          subHeading="Explore houses based on 10 types of stays"
-          categoryCardType="card5"
-          itemPerRow={5}
-          uniqueClassName="PageHome_s3"
-        />
+          {/* SECTION 1 
+          <div className="relative py-16">
+            <BackgroundSection className="bg-orange-50 dark:bg-black dark:bg-opacity-20 " />
+            <SectionSliderNewCategories
+              categories={DEMO_CATS_2}
+              categoryCardType="card4"
+              itemPerRow={4}
+              heading="Suggestions for discovery"
+              subHeading="Popular places to stay that Chisfis recommends for you"
+              sliderStyle="style2"
+              uniqueClassName="PageHome_s2"
+            />
+          </div>
+          */}
 
-        {/* SECTION */}
-        <SectionVideos />
+          
+          {/* SECTION 
+          <SectionSubscribe2 />
+          */}
 
-        {/* SECTION */}
-        <div className="relative py-16">
-          <BackgroundSection />
-          <SectionClientSay uniqueClassName="PageHome_" />
+
+          {/* SECTION 
+          <div className="relative py-16">
+            <BackgroundSection className="bg-orange-50 dark:bg-black dark:bg-opacity-20 " />
+            <SectionGridAuthorBox />
+          </div>
+          */}
+
+
+
+          {/* SECTION 
+          <SectionGridCategoryBox />
+
+          */}
+
+          {/* SECTION 
+          <div className="relative py-16">
+            <BackgroundSection />
+            <SectionBecomeAnAuthor />
+          </div>
+          */}
+
+
+          {/* SECTION 1 
+          <SectionSliderNewCategories
+            heading="Explore by types of stays"
+            subHeading="Explore houses based on 10 types of stays"
+            categoryCardType="card5"
+            itemPerRow={5}
+            uniqueClassName="PageHome_s3"
+          />
+          */}
+
+
+          {/* SECTION 
+          <SectionVideos />
+          */}
+
+
+          {/* SECTION 
+          <div className="relative py-16">
+            <BackgroundSection />
+            <SectionClientSay uniqueClassName="PageHome_" />
+          </div>
+          */}
+
         </div>
       </div>
+      <div className="p-5 mt-72 "><MapUbication/></div>
+      <div className=" m-24 p-5 mt-72"><SectionHowItWork/></div>
+      <div className=" m-24 p-5 mt-72"><SectionOurFeatures/></div>
     </div>
   );
 }

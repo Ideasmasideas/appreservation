@@ -52,6 +52,26 @@
   src: url("../fonts/Poppins/Poppins-Bold.ttf");
 }
 
+//fuente rubik
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 300;
+  src: url('https://fonts.gstatic.com/s/rubik/v26/iJWKBXyIfDnIV7nBrXyw023e.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 400;
+  src: url('https://fonts.gstatic.com/s/rubik/v26/iJWKBXyIfDnIV7nBrXyw023e.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 700;
+  src: url('https://fonts.gstatic.com/s/rubik/v26/iJWKBXyIfDnIV7nBrXyw023e.woff2') format('woff2');
+}
+
+
 //
 html body {
   @apply font-body antialiased;
@@ -65,11 +85,11 @@ h4 {
 }
 
 :root {
-  --font-display: Poppins;
-  --font-body: Poppins;
+  --font-display: Rubik;
+  --font-body: Rubik;
 }
 
 .theme-animals {
-  --font-display: Inter;
-  --font-body: Inter;
+  --font-display: Rubik;
+  --font-body: Rubij;
 }

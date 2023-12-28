@@ -1,0 +1,28 @@
+#heading-container{
+    color: rgba(143, 0, 255, 1);
+    font-size: 70px;
+    font-weight: bold;
+
+}
+
+#containersecrioslider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+@media screen and (max-width: 1024px){
+    #heading-container{
+        font-size: 50px;
+    
+    }
+}
+
+@media screen and (max-width: 600px){
+    #heading-container{
+        font-size: 40px;
+    
+    }
+}

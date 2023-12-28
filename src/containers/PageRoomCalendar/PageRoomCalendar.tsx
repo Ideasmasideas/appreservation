@@ -33,7 +33,7 @@ const PageRoomCalendar: FC<PropsRoomCalendar> = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch('https://appreservationback.vercel.app/rooms'); 
+          const response = await fetch('https://appreservationback.vercel.app/rooms');
           if (!response.ok) {
             throw new Error(`Error en la solicitud: ${response.status}`);
           }
@@ -67,8 +67,7 @@ const PageRoomCalendar: FC<PropsRoomCalendar> = () => {
 
   return (
     <div>
-      <CalendarRoom data={datosSala}/>
-      
+      <CalendarRoom data={datosSala}/>     
     </div>
   );
   
